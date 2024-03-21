@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NumberController : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class NumberController : MonoBehaviour
 
     public void RegisterTouch()
     {
-       // padController.
+        //Debug.Log(number);
+            padController.AddNumber(number, this.GetComponent<Toggle>());
     }
 }
