@@ -11,6 +11,9 @@ public class NumberPadController : MonoBehaviour
 
     private string winningSequence = "1, 3, 6, 8";
 
+
+    public string roomName;
+
     public void AddNumber(int number, Toggle toggle)
     {
         toggle.interactable = false;
@@ -28,8 +31,7 @@ public class NumberPadController : MonoBehaviour
             }
             else
             {
-                Debug.Log("OpenDoor!");
-                Debug.Log("*Door sound*");
+                GameObject.Find(roomName).GetComponent<DoorsController>().OpenNextDoor();
             }     
         }
     }

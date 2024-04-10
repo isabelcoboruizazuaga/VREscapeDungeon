@@ -9,6 +9,9 @@ public class TestingPAd : MonoBehaviour
     public List<int> numberList = new List<int>();
     public List<Button> toggleList = new List<Button>();
     private string winningSequence = "1, 3, 6, 8";
+
+
+    public string roomName="ChessPuzzle";
     // Start is called before the first frame update
     void Start()
     {
@@ -56,9 +59,8 @@ public class TestingPAd : MonoBehaviour
             else
             {
 
-                Debug.Log("OpenDoor!");
-                Debug.Log("*Door sound*");
 
+                GameObject.Find("ChessPuzzle").GetComponent<DoorsController>().OpenNextDoor();
                 //StartCoroutine(CorrectCode());
             }
 
