@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Hammer
   - Box
+  - Lock
   layers:
   - Default
   - TransparentFX

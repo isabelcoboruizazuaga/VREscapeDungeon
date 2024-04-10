@@ -12,7 +12,7 @@ public class HammerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag.Equals("Hammer"))
+        if (other.gameObject.tag.Equals("Box"))
         {
             other.gameObject.GetComponentInChildren<BoxBreak>().Break();
 
