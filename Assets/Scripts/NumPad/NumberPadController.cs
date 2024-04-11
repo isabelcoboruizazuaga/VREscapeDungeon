@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,6 +20,8 @@ public class NumberPadController : MonoBehaviour
         toggle.interactable = false;
         numberList.Add(number);
         toggleList.Add(toggle);
+        numberList= numberList.Distinct().ToList();
+        toggleList = toggleList.Distinct().ToList();
 
         if (numberList.Count == 4)
         {
@@ -49,6 +52,7 @@ public class NumberPadController : MonoBehaviour
             toggleList[i].interactable = true;
         }
 
+        toggleList.Clear();
         Debug.Log("lista toggle: " + toggleList.Count);
         Debug.Log("________________________________");
 
