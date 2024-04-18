@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DoorsController : MonoBehaviour
 {
-    [SerializeField] GameObject nextDoor, entranceDoor;
+    [SerializeField] GameObject nextDoor, entranceDoor, leaveOpen;
+    
 
     void Start()
     {
@@ -15,6 +16,11 @@ public class DoorsController : MonoBehaviour
         if(nextDoor != null)
         {
             CloseNextDoor();
+        }
+
+        if (leaveOpen != null)
+        {
+            leaveOpen.SetActive(false);
         }
     }
     public void OpenNextDoor()
