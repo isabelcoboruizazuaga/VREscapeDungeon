@@ -11,7 +11,7 @@ public class DoorsController : MonoBehaviour
     {
         if (entranceDoor != null)
         {
-            CloseEntranceDoor();
+            //CloseEntranceDoor();
         }
         if(nextDoor != null)
         {
