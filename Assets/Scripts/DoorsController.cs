@@ -10,11 +10,11 @@ public class DoorsController : MonoBehaviour
     {
         if (entranceDoor != null)
         {
-            CloseEntranceDoor();
+           // CloseEntranceDoor();
         }
         if(nextDoor != null)
         {
-            CloseNextDoor();
+           // CloseNextDoor();
         }
     }
     public void OpenNextDoor()

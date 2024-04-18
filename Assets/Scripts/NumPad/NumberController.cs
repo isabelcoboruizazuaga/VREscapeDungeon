@@ -11,7 +11,7 @@ public class NumberController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        padController=FindObjectOfType<NumberPadController>();
+        //padController=FindObjectOfType<NumberPadController>();
     }
 
     public void RegisterTouch()
