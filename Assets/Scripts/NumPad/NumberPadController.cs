@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,47 +10,63 @@ public class NumberPadController : MonoBehaviour
     public List<int> numberList = new List<int> ();
     public List<Toggle> toggleList = new List<Toggle> ();
 
-    private string winningSequence = "1, 3, 6, 8";
+    public string winningSequence = "1, 3, 6, 8";
 
 
     public string roomName;
 
     public void AddNumber(int number, Toggle toggle)
     {
-        toggle.interactable = false;
-        numberList.Add(number);
-        toggleList.Add(toggle);
-
-        if (numberList.Count == 4)
+        if (toggleList.Count < 4)
         {
-            string sequence= numberList[0]+ ", "+ numberList[1]+ ", "+ numberList[2]+ ", "+ numberList[3];
+            toggle.interactable = false;
+            numberList.Add(number);
+            toggleList.Add(toggle);
+            numberList = numberList.Distinct().ToList();
+            toggleList = toggleList.Distinct().ToList();
 
-            Debug.Log(sequence);
-
-            if (sequence != winningSequence){
-                StartCoroutine(IncorrectCode());
-            }
-            else
+            if (numberList.Count == 4)
             {
-                GameObject.Find(roomName).GetComponent<DoorsController>().OpenNextDoor();
-            }     
+                string sequence = numberList[0] + ", " + numberList[1] + ", " + numberList[2] + ", " + numberList[3];
+
+                Debug.Log(sequence);
+
+                if (sequence != winningSequence)
+                {
+                    StartCoroutine(IncorrectCode());
+                }
+                else
+                {
+                    GameObject.Find(roomName).GetComponent<DoorsController>().OpenNextDoor();
+                }
+            }
+        }
+        else
+        {
+            toggleList.Clear();
         }
     }
     IEnumerator IncorrectCode()
     {
+        Debug.Log("lista toggle: " + toggleList.Count);
+
+        var miList = new List<Toggle>(toggleList);
+
         numberList.Clear();
+       // toggleList.Clear();
+
+
 
         yield return new WaitForSeconds(1f);
-        Debug.Log("lista toggle: "+toggleList.Count);
 
-        for (var i = 0; i < toggleList.Count; i++)
+        for (var i = 0; i < miList.Count; i++)
         {
-            toggleList[i].isOn = false;
+            miList[i].isOn = false;
             //Aqui se cambiaría el icono si no se esconde
-            toggleList[i].interactable = true;
+            miList[i].interactable = true;
         }
 
-        Debug.Log("lista toggle: " + toggleList.Count);
+        Debug.Log("lista toggle: " + miList.Count);
         Debug.Log("________________________________");
 
     }
