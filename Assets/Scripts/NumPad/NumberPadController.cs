@@ -29,7 +29,7 @@ public class NumberPadController : MonoBehaviour
             }
             else
             {
-                GameObject.Find(roomName).GetComponent<DoorsController>().OpenNextDoor();
+                GameObject.Find(roomName).GetComponent<DoorsController>().FinishRoom();
             }
         }
     }
