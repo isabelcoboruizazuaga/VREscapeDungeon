@@ -6,6 +6,7 @@ public class DoorsController : MonoBehaviour
 {
    // [SerializeField] GameObject nextDoor, entranceDoor;
     [SerializeField] GameObject entranceDoor, exitDoor, nextEntranceDoor;
+    private AudioSource audioData;
 
     void Start()
     {
@@ -22,7 +23,7 @@ public class DoorsController : MonoBehaviour
     public void FinishRoom()
     {
         OpenExitDoor();
-        OpenNextDoor();
+        StartCoroutine(OpenExitDoor());
     }
     
     public void StartRoom()
@@ -32,9 +33,13 @@ public class DoorsController : MonoBehaviour
        // CloseNextDoor();
     }
 
-    private void OpenExitDoor()
+   
+    IEnumerator OpenExitDoor()
     {
+        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(1.5f);
         exitDoor.SetActive(false);
+
     }
     private void CloseExitDoor()
     {
@@ -54,6 +59,7 @@ public class DoorsController : MonoBehaviour
     private void CloseEntranceDoor()
     {
         entranceDoor.SetActive(true);
+        entranceDoor.GetComponent<AudioSource>().Play();
     }
     private void OpenEntranceDoor()
     {

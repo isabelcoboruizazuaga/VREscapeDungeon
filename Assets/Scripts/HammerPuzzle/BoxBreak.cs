@@ -7,6 +7,7 @@ public class BoxBreak : MonoBehaviour
     public ParticleSystem splintParticles;
     public ParticleSystem destroyedParticles;
     private int hitCount = 0;
+    [SerializeField] private AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class BoxBreak : MonoBehaviour
         if (hitCount == 0)
         {
             damageParticles.Play();
+            audioSource.Play();
         }
 
         hitCount++;
@@ -46,6 +48,7 @@ public class BoxBreak : MonoBehaviour
     {
         damageParticles.Play();
         splintParticles.Play();
+        audioSource.Play();
 
         var em = splintParticles.emission;
         em.enabled = true;
@@ -60,6 +63,7 @@ public class BoxBreak : MonoBehaviour
     {
         var go = Instantiate(destroyedParticles, transform.position, transform.rotation);
         go.Play();
+        audioSource.Play();
 
         yield return new WaitForSeconds(0.5f);
 
