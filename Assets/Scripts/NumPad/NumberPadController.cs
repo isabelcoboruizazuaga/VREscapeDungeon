@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +10,14 @@ public class NumberPadController : MonoBehaviour
     public List<Toggle> toggleList = new List<Toggle>();
     private string winningSequence = "1, 3, 6, 8";
     public string roomName;
+    public bool testPad = false;
+
+    private void Start()
+    {
+        if (testPad)
+        {
+            winningSequence = "1, 1, 2, 2";        }
+    }
     public void AddNumber(int number, Toggle toggle)
     {
         toggle.interactable = false;
