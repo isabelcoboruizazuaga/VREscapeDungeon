@@ -22,8 +22,8 @@ public class RoomEntryDetector : MonoBehaviour
 
     private void changeXray()
     {
-        rayObject.GetComponent<XRRayInteractor>().maxRaycastDistance = 1.5f;
-        rayObject.GetComponent<XRInteractorLineVisual>().lineLength = 1.5f;
+        rayObject.GetComponent<XRRayInteractor>().maxRaycastDistance = 2f;
+        rayObject.GetComponent<XRInteractorLineVisual>().lineLength = 2f;
 
     }
 }
