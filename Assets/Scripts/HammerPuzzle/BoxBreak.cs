@@ -7,11 +7,11 @@ public class BoxBreak : MonoBehaviour
     public ParticleSystem splintParticles;
     public ParticleSystem destroyedParticles;
     private int hitCount = 0;
-    [SerializeField] private AudioSource audioSource;
+    private AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

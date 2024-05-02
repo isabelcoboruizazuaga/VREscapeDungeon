@@ -22,7 +22,7 @@ public class DoorsController : MonoBehaviour
 
     public void FinishRoom()
     {
-        OpenExitDoor();
+        OpenNextDoor();
         StartCoroutine(OpenExitDoor());
     }
     
