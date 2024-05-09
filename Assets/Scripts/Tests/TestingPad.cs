@@ -60,7 +60,7 @@ public class TestingPAd : MonoBehaviour
             {
 
 
-                GameObject.Find("ChessPuzzle").GetComponent<DoorsController>().OpenNextDoor();
+                GameObject.Find("ChessPuzzle").GetComponent<DoorsController>().FinishRoom();
                 //StartCoroutine(CorrectCode());
             }
 
