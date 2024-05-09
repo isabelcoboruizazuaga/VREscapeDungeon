@@ -20,9 +20,12 @@ public class LavaScript : MonoBehaviour
         {
             other.transform.position= respawn.position;
             other.transform.rotation = respawn.rotation;
+            other.GetComponent<Rigidbody>().useGravity = false;
 
             platformController.transform.position = platformTransform.position;
             platformController.transform.rotation = platformTransform.rotation;
         }
     }
+
+
 }
