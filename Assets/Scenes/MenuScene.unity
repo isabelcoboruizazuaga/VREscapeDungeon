@@ -34747,6 +34747,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NumberPadPuzzleChess
       objectReference: {fileID: 0}
+    - target: {fileID: 5609979629841960516, guid: e1764217cf9e9dd48babe4cfeaa8b7b7, type: 3}
+      propertyPath: testPad
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -64011,19 +64015,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3102115311601558883, guid: ab51345fe97962940ac169ee2c828fe4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.001
+      value: 0.003
       objectReference: {fileID: 0}
     - target: {fileID: 3102115311601558883, guid: ab51345fe97962940ac169ee2c828fe4, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.001
+      value: 0.003
       objectReference: {fileID: 0}
     - target: {fileID: 3102115311601558883, guid: ab51345fe97962940ac169ee2c828fe4, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.001
+      value: 0.003
       objectReference: {fileID: 0}
     - target: {fileID: 3102115311601558883, guid: ab51345fe97962940ac169ee2c828fe4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.687
+      value: -0.648
       objectReference: {fileID: 0}
     - target: {fileID: 3102115311601558883, guid: ab51345fe97962940ac169ee2c828fe4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -64031,7 +64035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3102115311601558883, guid: ab51345fe97962940ac169ee2c828fe4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.124
+      value: -0.334
       objectReference: {fileID: 0}
     - target: {fileID: 3102115311601558883, guid: ab51345fe97962940ac169ee2c828fe4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -64108,6 +64112,10 @@ PrefabInstance:
     - target: {fileID: 4506988315337956280, guid: ab51345fe97962940ac169ee2c828fe4, type: 3}
       propertyPath: m_FirstHoverEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4564170591090185896, guid: ab51345fe97962940ac169ee2c828fe4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 215
       objectReference: {fileID: 0}
     - target: {fileID: 7443438436432654277, guid: ab51345fe97962940ac169ee2c828fe4, type: 3}
       propertyPath: m_Enabled

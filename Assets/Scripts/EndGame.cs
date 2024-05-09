@@ -7,7 +7,6 @@ public class EndGame : MonoBehaviour
 {
    public void Finish()
     {
-        Debug.Log("You won");
         SceneManager.LoadScene("EndScene");
     }
 }
